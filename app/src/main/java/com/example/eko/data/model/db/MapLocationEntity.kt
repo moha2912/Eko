@@ -12,6 +12,7 @@ data class MapLocationEntity(
     @ColumnInfo(name = "serverId") var serverId: Long? = null,
     @ColumnInfo(name = "longLoc") var longLoc: Double = 0 as Double,
     @ColumnInfo(name = "latLoc") var latLoc: Double = 0 as Double,
+    @ColumnInfo(name = "deleted") var deleted: Boolean = false,
     @ColumnInfo(name = "name") var name: String? = null,
     @ColumnInfo(name = "date") var date: Long? = null,
 )

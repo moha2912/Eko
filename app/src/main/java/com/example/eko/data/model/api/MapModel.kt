@@ -7,11 +7,13 @@ class MapModel(
     val LatLocation: Double? = null,
     val LongLocation: Double? = null,
     val Name: String? = "",
+    val Deleted: Boolean? = false,
     val DateTime: Long? = 0,
 ) {
     fun mapToMapEntity() = MapLocationEntity(
         serverId = id,
         latLoc = LatLocation ?: 0.toDouble(),
+        deleted = Deleted ?: false,
         longLoc = LongLocation ?: 0.toDouble(),
         name = Name,
         date = DateTime
@@ -20,6 +22,7 @@ class MapModel(
     fun mapToMapEntityWithLocalId(localId: Long) = MapLocationEntity(
         id = localId,
         serverId = id,
+        deleted = Deleted ?: false,
         latLoc = LatLocation ?: 0.toDouble(),
         longLoc = LongLocation ?: 0.toDouble(),
         name = Name,

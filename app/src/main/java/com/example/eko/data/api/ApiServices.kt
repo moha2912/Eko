@@ -10,6 +10,6 @@ import retrofit2.http.GET
 
 interface ApiServices {
 
-    @GET("v1/38fe91c8-a701-4608-8c3a-1eef4ab5fa32")
+    @GET("v1/ec75f4d7-138d-4f3d-9f28-793408798957")
     suspend fun getData(): MapModelRes
 }

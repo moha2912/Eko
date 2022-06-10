@@ -27,10 +27,7 @@ interface MapLocationDao {
     @Query("SELECT * FROM map_location WHERE serverId =:serverId ")
     suspend fun getItemWithServerId(serverId: Long): MapLocationEntity?
 
-    @Query("SELECT * FROM map_location ORDER BY id")
-    fun observeAllMaps(): Flow<List<MapLocationEntity>>
-
-    @Query("SELECT * from map_location ORDER BY serverId")
+    @Query("SELECT * from map_location WHERE deleted = '0' ORDER BY serverId")
     fun getMapFlow(): Flow<List<MapLocationEntity>>
 
     @ExperimentalCoroutinesApi
